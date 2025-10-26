@@ -1,6 +1,6 @@
 # CoffeeSpecialist REST API
 
-A small REST API for managing coffees and coffee specialists. Use this README as a starting point and replace any placeholder details with the repository's actual implementation, commands, and environment variables.
+A small REST API for managing coffees and coffee specialists. 
 
 ## Table of Contents
 
