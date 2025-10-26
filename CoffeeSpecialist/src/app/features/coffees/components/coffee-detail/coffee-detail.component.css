@@ -1,0 +1,14 @@
+.coffee-detail-container {
+    padding: 1rem;
+  }
+  
+  .error {
+    color: red;
+    font-weight: bold;
+  }
+  
+  img {
+    display: block;
+    margin-bottom: 1rem;
+  }
+  

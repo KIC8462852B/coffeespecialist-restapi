@@ -1,0 +1,52 @@
+<div class="add-coffee-container">
+  <h2>Añadir un Café Personalizado</h2>
+
+  <!-- Template-driven form -->
+  <form #coffeeForm="ngForm" (ngSubmit)="addCoffee(coffeeForm)">
+    <div class="form-group">
+      <label for="coffeeName">Nombre:</label>
+      <input
+        id="coffeeName"
+        type="text"
+        name="name"
+        [(ngModel)]="coffee.name"
+        required
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="coffeeDescription">Descripción:</label>
+      <input
+        id="coffeeDescription"
+        type="text"
+        name="description"
+        [(ngModel)]="coffee.description"
+        required
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="coffeeIngredients">Ingredientes:</label>
+      <input
+        id="coffeeIngredients"
+        type="text"
+        name="ingredients"
+        [(ngModel)]="coffee.ingredients"
+        required
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="coffeeImageUrl">Imagen (URL):</label>
+      <input
+        id="coffeeImageUrl"
+        type="text"
+        name="imageUrl"
+        [(ngModel)]="coffee.imageUrl"
+        required
+      />
+    </div>
+
+    <button type="submit" [disabled]="coffeeForm.invalid">Agregar Café</button>
+  </form>
+</div>

@@ -1,0 +1,32 @@
+<div class="coffee-detail-container">
+    <h2>Detalle de Café</h2>
+  
+    <!-- Indicador de carga -->
+    <p *ngIf="isLoading">Cargando detalle...</p>
+  
+    <!-- Mensaje de error -->
+    <p *ngIf="errorMessage && !isLoading" class="error">
+      {{ errorMessage }}
+    </p>
+  
+    <!-- Si hay café y no hay error, mostrar detalles -->
+    <div *ngIf="coffee && !isLoading && !errorMessage">
+      <img
+        [src]="coffee.image"
+        alt="{{ coffee.title }}"
+        width="200"
+        height="auto"
+      />
+  
+      <h3>{{ coffee.title }}</h3>
+      <p>{{ coffee.description }}</p>
+  
+      <h4>Ingredientes:</h4>
+      <ul>
+        <li *ngFor="let ing of coffee.ingredients">
+          {{ ing }}
+        </li>
+      </ul>
+    </div>
+  </div>
+  

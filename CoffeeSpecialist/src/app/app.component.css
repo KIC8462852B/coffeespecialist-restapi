@@ -1,0 +1,107 @@
+/* Estilos generales */
+body {
+  font-family: 'Roboto', sans-serif;
+  background: #fafafa;
+  color: #333;
+  margin: 0;
+  min-height: 100vh;
+}
+
+header {
+  padding: 1rem 2rem;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+header h1 {
+  margin: 0;
+  color: #333;
+  font-size: 2.5rem;
+}
+
+nav {
+  margin-top: 1rem;
+  font-size: 1.1rem;
+}
+
+nav a {
+  color: #555;
+  text-decoration: none;
+  padding: 0.5rem;
+}
+
+nav a:hover {
+  color: #000;
+  text-decoration: underline;
+}
+
+hr {
+  margin-top: 0;
+  border: 0;
+  height: 2px;
+  background-image: linear-gradient(to right, #f0f0f0, #333, #f0f0f0);
+}
+
+/* Estilos específicos para componentes cargados en router-outlet */
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 2rem auto;
+  max-width: 1200px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.coffee-item {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.coffee-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+}
+
+.coffee-item img {
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+  margin-bottom: 0.5rem;
+  border-radius: 4px;
+}
+
+.coffee-item h3, .coffee-item p {
+  margin: 0.5rem 0;
+}
+
+.coffee-item h3 {
+  font-size: 1.2rem;
+  color: #444;
+}
+
+.coffee-item p {
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.error {
+  color: red;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+/* Estilos para indicadores de carga */
+p[ng-reflect-ng-if='true'] {
+  text-align: center;
+  font-style: italic;
+}

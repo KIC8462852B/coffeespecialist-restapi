@@ -1,0 +1,55 @@
+<div class="add-coffee-container">
+  <h2>Nuevo Pedido (Barista)</h2>
+
+  <!-- Formulario para crear el pedido -->
+  <form #orderForm="ngForm" (ngSubmit)="createOrder(orderForm)">
+
+        <!-- Cliente -->
+        <div>
+          <label for="clientName">Cliente:</label>
+          <input
+            type="string"
+            id="clientName"
+            name="Nombre del cliente"
+            [(ngModel)]="baristaOrder.clientName"
+            required
+            min="0"
+          />
+        </div>
+
+    <!-- Seleccionar café de la API -->
+    <div>
+      <label for="coffeeSelect">Pedido:</label>
+      <select
+        id="coffeeSelect"
+        name="coffeeName"
+        [(ngModel)]="baristaOrder.coffeeName"
+        required
+      >
+        <option *ngFor="let coffee of coffees" [value]="coffee.title">
+          {{ coffee.title }}
+        </option>
+      </select>
+    </div>
+
+    <!-- Cantidad -->
+    <div>
+      <label for="quantity">Cantidad:</label>
+      <input
+        type="number"
+        id="quantity"
+        name="quantity"
+        [(ngModel)]="baristaOrder.quantity"
+        required
+        min="1"
+      />
+    </div>
+
+
+
+    <!-- Botón para enviar el pedido -->
+    <button type="submit" [disabled]="orderForm.invalid">
+      Guardar Pedido
+    </button>
+  </form>
+</div>

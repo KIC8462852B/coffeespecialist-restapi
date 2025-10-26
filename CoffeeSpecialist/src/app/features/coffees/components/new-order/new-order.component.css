@@ -1,0 +1,39 @@
+.add-coffee-container {
+  padding: 1rem;
+  border: 1px solid #ccc;
+  margin: 1rem 0;
+  max-width: 400px;
+}
+
+.add-coffee-container h2 {
+  margin-bottom: 1rem;
+}
+
+.add-coffee-container label {
+  display: block;
+  margin-bottom: 0.25rem;
+  font-weight: 600;
+}
+
+.add-coffee-container select,
+.add-coffee-container input {
+  width: 100%;
+  padding: 0.4rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-bottom: 1rem;
+}
+
+button {
+  background-color: #007acc;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-radius: 4px;
+}
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
