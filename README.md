@@ -1,121 +1,125 @@
 # CoffeeSpecialist REST API
 
-A simple, documented REST API for managing coffees and coffee specialists. This repository contains the server-side code for providing endpoints to list, create, update, and delete coffees and specialists, authenticate users, and run the service locally or in Docker.
+A small REST API for managing coffees and coffee specialists. Use this README as a starting point and replace any placeholder details with the repository's actual implementation, commands, and environment variables.
 
-Table of Contents
-- About
-- Features
-- Tech stack
-- Getting started
-  - Prerequisites
-  - Installation
-  - Configuration
-  - Running
-- API Overview
-  - Authentication
-  - Endpoints
-- Testing
-- Docker
-- Contributing
-- License
-- Maintainers
+## Table of Contents
 
-About
+- [About](#about)
+- [Features](#features)
+- [Tech stack](#tech-stack)
+- [Getting started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+  - [Configuration](#configuration)
+  - [Running locally](#running-locally)
+- [API Overview](#api-overview)
+  - [Authentication](#authentication)
+  - [Endpoints](#endpoints)
+- [Testing](#testing)
+- [Docker](#docker)
+- [Contributing](#contributing)
 
-This project implements a RESTful API for a coffee specialist service. It provides endpoints to manage coffees, specialists, and user authentication. The README is intentionally generic — update the sections below to reflect the actual implementation details (framework, database, environment variables, and scripts) used in this repository.
 
-Features
+---
+
+## About
+
+This project implements a RESTful API to manage coffees, specialists, and user authentication. The README intentionally contains examples — please adapt them to match the actual framework, DB, and scripts used in the repository.
+
+## Features
+
 - CRUD for coffees
 - CRUD for specialists
-- Basic authentication (token/JWT-based)
-- Configuration via environment variables
+- Authentication (JWT token example)
+- Environment-based configuration
 - Docker support
 
-Tech stack (example)
-- Node.js + Express (or your chosen framework)
-- PostgreSQL (or another relational DB)
+## Tech stack
+
+(Replace with actual stack)
+- Node.js + Express (example)
+- PostgreSQL (example)
 - JWT for authentication
 - Docker & Docker Compose
 
-Getting started
+## Getting started
 
-Prerequisites
-- Node.js (>= 16) and npm or yarn, or the appropriate runtime for your stack
-- Docker & Docker Compose (optional, recommended for local setup)
-- A running database (Postgres, MySQL, etc.) or use the included Docker Compose setup
+### Prerequisites
 
-Installation
+- Node.js (>= 16) and npm/yarn (if Node.js used)
+- Docker & Docker Compose (optional)
+- A running database (or use Docker)
+
+### Installation
+
 1. Clone the repo
    git clone https://github.com/KIC8462852B/coffeespecialist-restapi.git
    cd coffeespecialist-restapi
+
 2. Install dependencies
    npm install
    # or
    yarn install
 
-Configuration
-Create a .env file in the project root (example):
+### Configuration
 
-PORT=3000
-NODE_ENV=development
-DATABASE_URL=postgres://user:password@localhost:5432/coffeespecialist
+Create a `.env` file at the project root (example):
+
+PORT=3000  
+NODE_ENV=development  
+DATABASE_URL=postgres://user:password@localhost:5432/coffeespecialist  
 JWT_SECRET=replace_with_a_secure_random_secret
 
-Adjust environment variables to match your environment. If you use Docker, set values in the docker-compose.yml or environment files accordingly.
+Adjust values to your environment or set them in Docker Compose.
 
-Running locally
-- Development mode (with live reload):
-  npm run dev
-- Production mode:
-  npm start
+### Running locally
 
-API Overview
+- Development (example): npm run dev  
+- Production (example): npm start
 
-Authentication
-- The API uses JSON Web Tokens (JWT) for authentication in this example. Obtain a token via the auth endpoint (e.g., POST /auth/login) and pass it in the Authorization header:
-  Authorization: Bearer <token>
+## API Overview
 
-Common endpoints (example path patterns — update to match your implementation):
+### Authentication
+
+This README uses JWT as an example. Obtain a token (POST /auth/login) and include it in requests:
+
+Authorization: Bearer <token>
+
+### Endpoints (example)
 
 - Auth
-  - POST /auth/register  - register a new user
-  - POST /auth/login     - obtain JWT
+  - POST /auth/register — register
+  - POST /auth/login — obtain JWT
 
 - Coffees
-  - GET  /coffees        - list coffees (supports pagination and filtering)
-  - GET  /coffees/:id    - get a single coffee
-  - POST /coffees        - create a new coffee (auth required)
-  - PUT  /coffees/:id    - update a coffee (auth required)
-  - DELETE /coffees/:id - delete a coffee (auth required)
+  - GET /coffees — list coffees (pagination & filters)
+  - GET /coffees/:id — get coffee
+  - POST /coffees — create (auth required)
+  - PUT /coffees/:id — update (auth required)
+  - DELETE /coffees/:id — delete (auth required)
 
 - Specialists
-  - GET  /specialists         - list specialists
-  - GET  /specialists/:id     - get a specialist
-  - POST /specialists         - create a specialist (auth required)
-  - PUT  /specialists/:id     - update a specialist (auth required)
-  - DELETE /specialists/:id   - delete a specialist (auth required)
+  - GET /specialists
+  - GET /specialists/:id
+  - POST /specialists (auth required)
+  - PUT /specialists/:id (auth required)
+  - DELETE /specialists/:id (auth required)
 
-Replace the above endpoints with the actual routes used by the repository if they differ.
+Replace above routes with the repository's actual routes if they differ.
 
-Testing
-- Run unit and integration tests
-  npm test
+## Testing
 
-Docker
-- Start the app with Docker Compose (example)
-  docker-compose up --build
+Run tests (example):  
+npm test
 
-Contributing
-- Please open issues and pull requests. Follow these guidelines:
-  - Open an issue to discuss major changes before implementing them.
-  - Keep pull requests small and focused.
-  - Add tests for new functionality and ensure existing tests pass.
+## Docker
 
-License
-- Specify a license for the repository (e.g., MIT). If you haven\'t chosen one yet, add a LICENSE file.
+Start with Docker Compose (example):  
+docker-compose up --build
 
-Maintainers
-- @KIC8462852B
+## Contributing
 
-Notes
-- This README is a starting point — update the commands, environment variables, and endpoints to match the actual implementation in this repository.
+- Open issues to discuss major changes before implementing them.
+- Keep pull requests small and focused.
+- Add tests and ensure CI passes.
+
